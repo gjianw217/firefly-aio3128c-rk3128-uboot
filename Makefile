@@ -124,6 +124,7 @@ KBUILD_OUTPUT := $(shell mkdir -p $(KBUILD_OUTPUT) && cd $(KBUILD_OUTPUT) \
 								&& /bin/pwd)
 $(if $(KBUILD_OUTPUT),, \
      $(error failed to create output directory "$(saved-output)"))
+KBUILD_OUTPUT_RK_TOOLS :=$(shell cp -rf $(CURDIR)/tools/rk_tools $(KBUILD_OUTPUT)/tools)
 
 PHONY += $(MAKECMDGOALS) sub-make
 
